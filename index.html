@@ -152,12 +152,16 @@
             --accent: #ffffff; /* Pure Monochrome Elegance */
         }
 
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: var(--font-ui);
             background-color: #020202;
             color: #ffffff;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
             overflow-y: hidden; 
         }
 
@@ -201,13 +205,20 @@
 
         /* Dynamic Island Nav */
         .dynamic-nav {
-            position: fixed; top: 2rem; left: 50%; transform: translateX(-50%) translateY(-100px);
-            display: flex; gap: 2rem; padding: 1rem 3rem; border-radius: 100px; z-index: 50;
+            position: fixed; top: 1rem; left: 50%; transform: translateX(-50%) translateY(-100px);
+            display: flex; gap: 1rem; padding: 0.75rem 1.5rem; border-radius: 100px; z-index: 50;
             transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            width: max-content; max-width: 95vw;
+            justify-content: center;
         }
         .dynamic-nav.visible { transform: translateX(-50%) translateY(0); }
-        .nav-item { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #aaa; transition: color 0.3s; }
+        .nav-item { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; transition: color 0.3s; white-space: nowrap; }
         .nav-item:hover { color: #fff; }
+
+        @media (min-width: 768px) {
+            .dynamic-nav { top: 2rem; gap: 2rem; padding: 1rem 3rem; max-width: none; }
+            .nav-item { font-size: 0.7rem; letter-spacing: 0.2em; }
+        }
 
         /* Slide-up Modal */
         #product-modal {
@@ -312,7 +323,7 @@
         .hud-grid-line-h { position: absolute; top: 30%; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.02); }
 
         .marquee-wrapper {
-            width: 100vw; overflow: hidden; white-space: nowrap; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 1.5rem 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); position: relative; z-index: 10; margin-top: -50px; margin-bottom: 50px;
+            width: 100%; overflow: hidden; white-space: nowrap; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 1.5rem 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); position: relative; z-index: 10; margin-top: -50px; margin-bottom: 50px;
         }
         .marquee-content {
             display: inline-block; padding-left: 100%; animation: marquee 25s linear infinite;
@@ -438,7 +449,7 @@
                     <span>Structure Your Mindset</span> <span>//</span> 
                     <span class="text-white opacity-80">Wear by Shashen</span> <span>//</span> 
                     <span>Genesis Drop</span> <span>//</span> 
-                    <span class="text-white opacity-80">Do or Die Mentality</span> <span>//</span>
+                    <span class="text-white opacity-80">Artifact 001</span> <span>//</span>
                     <span>No Compromises</span> <span>//</span>
                 </span>
             </div>
@@ -465,7 +476,7 @@
                         <div class="absolute bottom-6 left-6 right-6 z-20 flex justify-between items-end">
                             <div>
                                 <p class="font-ui text-[10px] tracking-[0.3em] uppercase text-[var(--accent)] mb-2">ELITE DIVISION</p>
-                                <h3 class="font-display text-2xl uppercase tracking-wider text-white">ARTIFACT: 001 ( IRON )</h3>
+                                <h3 class="font-display text-lg md:text-2xl uppercase tracking-wider text-white">ARTIFACT: 001 ( IRON )</h3>
                             </div>
                         </div>
                     </div>
@@ -501,7 +512,7 @@
                         <div class="absolute bottom-6 left-6 right-6 z-20 flex justify-between items-end">
                             <div>
                                 <p class="font-ui text-[10px] tracking-[0.3em] uppercase text-[var(--accent)] mb-2">GRAPHIC ARCHIVE</p>
-                                <h3 class="font-display text-2xl uppercase tracking-wider text-white">ARTIFACT: 002 ( REBEL )</h3>
+                                <h3 class="font-display text-lg md:text-2xl uppercase tracking-wider text-white">ARTIFACT: 002 ( REBEL )</h3>
                             </div>
                         </div>
                     </div>
@@ -537,7 +548,7 @@
                         <div class="absolute bottom-6 left-6 right-6 z-20 flex justify-between items-end">
                             <div>
                                 <p class="font-ui text-[10px] tracking-[0.3em] uppercase text-[var(--accent)] mb-2">ASPHALT SERIES</p>
-                                <h3 class="font-display text-2xl uppercase tracking-wider text-white">ARTIFACT: 003 ( APEX )</h3>
+                                <h3 class="font-display text-lg md:text-2xl uppercase tracking-wider text-white">ARTIFACT: 003 ( APEX )</h3>
                             </div>
                         </div>
                     </div>
